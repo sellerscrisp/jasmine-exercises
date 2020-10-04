@@ -30,13 +30,13 @@ function setupIntialValues() {
     rate: 3.5
   }
 
-  const initialAmount = getCurrentUIValues().amount;
+  const initialAmount = document.getElementById("loan-amount") //? getCurrentUIValues().amount;
   initialAmount.value = values.amount;
 
-  const initialYears = getCurrentUIValues().years;
+  const initialYears = document.getElementById("loan-years") //? getCurrentUIValues().years;
   initialYears.value = values.years;
 
-  const initialRate = getCurrentUIValues().rate;
+  const initialRate = document.getElementById("loan-rate") //? getCurrentUIValues().rate;
   initialRate.value = values.rate;
 
   if (initialAmount > 0 && initialInterest > 0) {
@@ -71,4 +71,7 @@ function calculateMonthlyPayment(values) {
 
 // Given a string representing the monthly payment value,
 // update the UI to show the value.
-function updateMonthly(monthly) {}
+function updateMonthly(monthly) {
+  const UImonthly = document.querySelector("#monthly-payment");
+  UImonthly.innerText = "$ " + monthly;
+}
