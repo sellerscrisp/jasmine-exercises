@@ -23,3 +23,20 @@ function appendTd(tr, value) {
 
   tr.append(newTd);
 }
+
+function appendDeleteBtn(tr, type) {
+  let newTd = document.createElement('td');
+  newTd.innerText = 'X';
+  newTd.className = 'deleteBtn';
+
+  newTd.addEventListener('click', deleteElement);
+
+  tr.append(newTd);
+}
+
+function deleteElement(e) {
+  let element = e.target.closest('tr');
+  delete allServers[element.id];
+  element.parentNode.removeChild(element);
+  updateServerTable();
+}
