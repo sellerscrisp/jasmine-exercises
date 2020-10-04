@@ -44,10 +44,11 @@ describe('Payments test (with setup and tear-down)', function () {
 
         let paymentTable = document.querySelectorAll('#paymentTable tbody tr td');
 
-        expect(paymentTable.length).toEqual(3);
+        expect(paymentTable.length).toEqual(4);
         expect(paymentTable[0].innerText).toEqual('$200');
         expect(paymentTable[1].innerText).toEqual('$40');
         expect(paymentTable[2].innerText).toEqual('20%');
+        expect(paymentTable[3].innerText).toEqual('X');
     });
 
     it('should update the shift summary when updateSummary() is called', function () {
